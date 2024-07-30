@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "1",
+    "coupleImage": "https://i.postimg.cc/MZ9vq2bZ/f6.jpg",
+    "marriageDate": "2023-06-15",
+    "reviewStar": 5,
+    "successStoryText": "Our journey started here and blossomed into a beautiful marriage. The platform helped us find each other effortlessly. Our wedding was perfect, and we're thrilled to share our happiness."
+  },
+  {
+    "_id": "2",
+    "coupleImage": "https://i.postimg.cc/8cxGcHz4/m5.jpg",
+    "marriageDate": "2022-09-22",
+    "reviewStar": 4,
+    "successStoryText": "We were matched through this site and it was an amazing experience. Our relationship grew stronger with every interaction, leading to a wonderful wedding. We recommend this platform to anyone looking for genuine connections."
+  },
+  {
+    "_id": "3",
+    "coupleImage": "https://i.postimg.cc/ZRRzLg9j/m7.jpg",
+    "marriageDate": "2021-11-05",
+    "reviewStar": 5,
+    "successStoryText": "Finding each other on this platform was a life-changing experience. The process was smooth, and our wedding was a dream come true. We’re grateful for the chance to have met and built our life together."
+  },
+  {
+    "_id": "4",
+    "coupleImage": "https://i.postimg.cc/x1vQjLDG/m10.jpg",
+    "marriageDate": "2024-01-12",
+    "reviewStar": 4,
+    "successStoryText": "We found our perfect match thanks to this site. The service was straightforward and effective, leading to a lovely wedding. We are delighted with how things turned out and are excited about our future."
+  },
+  {
+    "_id": "5",
+    "coupleImage": "https://i.postimg.cc/x1vQjLDG/m12.jpg",
+    "marriageDate": "2023-07-08",
+    "reviewStar": 5,
+    "successStoryText": "Our experience was extraordinary. We connected quickly and had a beautiful wedding. We couldn't be happier with the service provided and are thrilled to share our success story."
+  },
+  {
+    "_id": "6",
+    "coupleImage": "https://i.postimg.cc/ncMMLR04/f3.jpg",
+    "marriageDate": "2022-12-25",
+    "reviewStar": 5,
+    "successStoryText": "This platform made it possible for us to find each other. Our wedding was enchanting, and we are incredibly grateful for the support we received. We highly recommend this site for those seeking a meaningful relationship."
+  }
+]
