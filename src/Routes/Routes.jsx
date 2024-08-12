@@ -5,6 +5,8 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Biodata from "../Pages/Biodata/Biodata";
+import AllBiodata from "../Pages/Biodata/AllBiodata";
+import Login from "../Pages/Login/Login";
 
   export const router = createBrowserRouter([
     {
@@ -18,7 +20,15 @@ import Biodata from "../Pages/Biodata/Biodata";
         {
             path:'/biodata',
             element:<Biodata></Biodata>
-        }
+        },
+        {
+            path:'/allbiodata',
+            element:<AllBiodata></AllBiodata>
+        },
+        {
+            path:'/login',
+            element:<Login></Login>
+        },
       ]
     },
   ]);

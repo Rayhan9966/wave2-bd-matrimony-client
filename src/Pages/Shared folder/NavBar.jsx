@@ -17,16 +17,17 @@ const NavBar = () => {
         </li>
         <li>
     
-          <Link to="/biodata">Biodata</Link>
+          <Link to="/allbiodata">All Biodata</Link>
           
         </li>
         <li>
             <a>About Us</a></li>
             <li>
         <a>DashBoard</a></li>
-        <li></li>
+ 
         <li>
             <a>Contact</a></li>
+        {/* <li><Link to='/login'>Login</Link></li> */}
     
     </>
     return (
@@ -54,6 +55,13 @@ const NavBar = () => {
        {navOptions} 
       </ul>
     </div>
+<Link to='/'>
+<img
+              className="w-auto h-7 sm:h-8"
+              style={{width:40, height:40, borderRadius: 40/ 2}} 
+              src="/src/assets/New folder/bgimg/img1.jpg"
+              alt=""
+            /></Link>
     <Link to='/' className="btn btn-ghost text-xl">BdMatrimony</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -62,7 +70,7 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Login</a>
+    <Link to ='/login' className="btn">Login</Link>
   </div>
 </div> 
         </div>
