@@ -1,0 +1,8 @@
+.bg{
+    
+    background-image: url('../src/assets/New folder/bio.jpg'); /* Path to your light mode image */
+    background-size: cover;
+    background-position: center;
+  
+  
+}

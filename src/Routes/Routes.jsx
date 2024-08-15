@@ -8,6 +8,7 @@ import Biodata from "../Pages/Biodata/Biodata";
 import AllBiodata from "../Pages/Biodata/AllBiodata";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Login/SignUp";
+import PrivateRoutes from "./PrivateRoutes";
 
   export const router = createBrowserRouter([
     {
@@ -24,8 +25,11 @@ import SignUp from "../Pages/Login/SignUp";
         },
         {
             path:'/allbiodata',
-            element:<AllBiodata></AllBiodata>
-        },
+            element:<PrivateRoutes>
+              <AllBiodata></AllBiodata>
+            
+            </PrivateRoutes>
+            },
         {
             path:'/login',
             element:<Login></Login>
@@ -34,6 +38,10 @@ import SignUp from "../Pages/Login/SignUp";
             path:'/signup',
             element:<SignUp></SignUp>
         },
+        {
+            path:'/signup',
+            element:<SignUp></SignUp>
+        }
       ]
     },
   ]);

@@ -64,6 +64,14 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
    { user ? <>
+   <p>{user?.displayName}</p><br />
+   
+        <div className="w-10 rounded-full">
+          <img
+          
+            src={user?.photoURL} />
+        </div>
+     
     <button onClick={handleLogOut} className="btn btn-ghost">Log Out</button>
    </> : <>
    <Link to ='/login' className="btn">Login</Link></>
