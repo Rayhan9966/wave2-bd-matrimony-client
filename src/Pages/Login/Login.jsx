@@ -1,9 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect,  useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate,  validateCaptcha } from 'react-simple-captcha';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
+
 
 const Login = () => {
-  const captchaRef=useRef(null);
+  // const captchaRef=useRef(null);
   const [disabled,setDisabled]=useState(true);
+
+const {signIn}=useContext(AuthContext)
+
   useEffect(()=>
   {
     loadCaptchaEnginge(4);
@@ -14,10 +22,22 @@ const Login = () => {
         const email=form.email.value;
         const password=form.password.value;
         console.log(email,password);
+        signIn(email,password)
+        .then(result=>{
+          const user=result.user;
+          console.log(user);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Login Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        })
 
     }
-    const handleValidCaptcha= ()=>{
-      const user_value=captchaRef.current.value;
+    const handleValidCaptcha= (e)=>{
+      const user_value=e.target.value;
      if(validateCaptcha(user_value)){
      setDisabled(false);
      }
@@ -28,6 +48,10 @@ const Login = () => {
 
     }
     return (
+    <>
+       <Helmet>
+    <title>Bd Matrimony | Log In</title>
+</Helmet>
       <div className='mt-10'>
           <div className="flex w-full  max-w-sm mx-auto overflow-hidden rounded-lg shadow-lg dark:bg-gray-500 lg:max-w-4xl">
         <div
@@ -141,10 +165,10 @@ const Login = () => {
             <label>
             <LoadCanvasTemplate />
             </label>
-            <input
+            <input onBlur={handleValidCaptcha}
              
               className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-              type="text"  ref={captchaRef} placeholder='Captcha' name='captcha'
+              type="text"   placeholder='Captcha' name='captcha'
             />
           </div>
 
@@ -152,9 +176,9 @@ const Login = () => {
             {/* <button>
               Sign In
             </button> */}
-              <div>
-              <button onClick={handleValidCaptcha} className="btn btn-outline btn-success">Validation</button>
-              </div>
+              {/* <div>
+              <button  className="btn btn-outline btn-success">Validation</button>
+              </div> */}
         <div className='form-control  text-white  mt-6'>
         <input disabled={disabled}  className="btn btn-primary " type='submit' value='Login'></input>
         </div>
@@ -163,17 +187,17 @@ const Login = () => {
           </form>
           <div className="flex items-center justify-between mt-4">
             <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4" />
-            <a
+            <Link to='/signup'
               href="#"
-              className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
+              className="text-xs text-white uppercase hover:dark:text-green-500 hover:underline"
             >
-              or sign up
-            </a>
+              or Sign up
+            </Link>
             <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4" />
           </div>
         </div>
       </div>
-      </div>
+      </div></>
       
     );
 };
