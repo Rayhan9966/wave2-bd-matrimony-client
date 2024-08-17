@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaUser, FaUsers } from "react-icons/fa6";
 
 
 const NavBar = () => {
@@ -19,7 +20,9 @@ const NavBar = () => {
         <li><Link to="/allbiodata">All Biodata</Link></li>
         <li><a>About Us</a></li> 
         <li><a>DashBoard</a></li>
-        <li><a>Contact</a></li>
+        <li><Link to='/'> <FaUsers className="mr-2 font-2xl"></FaUsers> <div className="badge badge-secondary">+0</div></Link></li>
+   
+        
         {/* <li><Link to='/login'>Login</Link></li> */}
     
     </>
@@ -64,7 +67,8 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
    { user ? <>
-   <p>{user?.displayName}</p><br />
+   <p>{user?.displayName}</p>
+   <br />
    
         <div className="w-10 rounded-full">
           <img
