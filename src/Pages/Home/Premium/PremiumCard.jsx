@@ -1,17 +1,38 @@
 
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const PremiumCard = ({bio}) => {
 	const{_id, biodata_type,profile_image,permanent_division, age,occupation,category}=bio;
 
 	const {user}=useAuth();
 	const navigate=useNavigate();
+	const location = useLocation();
 
 	const handleAddtoView = member=>{
 	if(user && user.email){
 		//sent view item to the database
+		console.log(user.email,member);
+		const memberItem={
+			viewId:_id,
+			email:user.email,
+			name,profile_image,occupation
+		}
+		axios.post('http://localhost:5000/views',memberItem)
+		.then(res=>{
+			console.log(res.data);
+			if(res.data.insertedId){
+				Swal.fire({
+					position: "top-end",
+					icon: "success",
+					title: `${occupation} added in History Page`,
+					showConfirmButton: false,
+					timer: 1500
+				  });
+			}
+		})
 }
 else{
 	Swal.fire({
@@ -25,7 +46,7 @@ else{
 	  }).then((result) => {
 		if (result.isConfirmed) {
 		//send to login page
-navigate('/login')
+navigate('/login',{state: {from:location}})
 		}
 	  });
 }
