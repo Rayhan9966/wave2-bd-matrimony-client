@@ -1,6 +1,6 @@
 import {
     createBrowserRouter,
-    RouterProvider,
+   
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
@@ -9,6 +9,10 @@ import AllBiodata from "../Pages/Biodata/AllBiodata";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Login/SignUp";
 import PrivateRoutes from "./PrivateRoutes";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import View from "../Layout/Dashboard/View";
+
+
 
   export const router = createBrowserRouter([
     {
@@ -44,4 +48,15 @@ import PrivateRoutes from "./PrivateRoutes";
         }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      children:[
+        {
+          path:'view',
+          element:<View></View>
+        }
+      ]
+    }
+   
   ]);

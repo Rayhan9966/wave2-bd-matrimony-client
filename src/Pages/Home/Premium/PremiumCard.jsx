@@ -3,6 +3,8 @@ import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+import useView from '../../../Hooks/useView';
 
 const PremiumCard = ({bio}) => {
 	const{_id, biodata_type,profile_image,permanent_division, age,occupation,category}=bio;
@@ -10,6 +12,8 @@ const PremiumCard = ({bio}) => {
 	const {user}=useAuth();
 	const navigate=useNavigate();
 	const location = useLocation();
+	const axiosSecure=useAxiosSecure();
+	const [,refetch]=useView();
 
 	const handleAddtoView = member=>{
 	if(user && user.email){
@@ -20,7 +24,8 @@ const PremiumCard = ({bio}) => {
 			email:user.email,
 			name,profile_image,occupation
 		}
-		axios.post('http://localhost:5000/views',memberItem)
+		// axios.post('http://localhost:5000/views',memberItem)
+		axiosSecure.post('/views',memberItem)
 		.then(res=>{
 			console.log(res.data);
 			if(res.data.insertedId){
@@ -31,6 +36,8 @@ const PremiumCard = ({bio}) => {
 					showConfirmButton: false,
 					timer: 1500
 				  });
+				  //update card for refetch
+				  refetch();
 			}
 		})
 }

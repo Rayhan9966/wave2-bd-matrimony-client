@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { FaUser, FaUsers } from "react-icons/fa6";
+import { FaUsers } from "react-icons/fa6";
+import useView from "../../Hooks/useView";
 
 
 const NavBar = () => {
   const {user,logOut}=useContext(AuthContext);
+  const [view]=useView();
   const handleLogOut=()=>{
     logOut()
     .then(()=>{})
@@ -20,7 +22,7 @@ const NavBar = () => {
         <li><Link to="/allbiodata">All Biodata</Link></li>
         <li><a>About Us</a></li> 
         <li><a>DashBoard</a></li>
-        <li><Link to='/'> <FaUsers className="mr-2 font-2xl"></FaUsers> <div className="badge badge-secondary">+0</div></Link></li>
+        <li><Link to='/dashboard/view'> <FaUsers className="mr-2 font-2xl"></FaUsers> <div className="badge badge-primary border-l-indigo-600">+{view.length}</div></Link></li>
    
         
         {/* <li><Link to='/login'>Login</Link></li> */}
