@@ -22,7 +22,7 @@ const PremiumCard = ({bio}) => {
 		const memberItem={
 			viewId:_id,
 			email:user.email,
-			name,profile_image,occupation
+			name,profile_image,occupation,permanent_division,age,biodata_type
 		}
 		// axios.post('http://localhost:5000/views',memberItem)
 		axiosSecure.post('/views',memberItem)
