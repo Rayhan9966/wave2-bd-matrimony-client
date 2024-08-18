@@ -5,15 +5,18 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
+
 // import Cover from '../Shared folder/Cover/Cover';
 
 
 
 const SignUp = () => {
+    const axiosPublic = useAxiosPublic();
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const onSubmit = data => {
         console.log(data);
         createUser(data.email, data.password)
@@ -22,16 +25,29 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('user updated')
-                        reset();
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Sign up Successfully",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate('/');
+                        // console.log('user updated')
+                        //create user entry in the database
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosPublic.post('/users',userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user succesfully save in data base');
+                                    reset();
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "Sign up Successfully",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+
+                                }
+                            })
+
                     })
                     .catch(error => console.log(error));
 
