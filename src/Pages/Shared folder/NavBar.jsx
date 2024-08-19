@@ -22,7 +22,8 @@ const NavBar = () => {
         <li><Link to="/allbiodata">All Biodata</Link></li>
         <li><a>About Us</a></li> 
         <li><a>DashBoard</a></li>
-        <li><Link to='/dashboard/view'> <FaUsers className="mr-2 font-2xl"></FaUsers> <div className="badge badge-primary border-l-indigo-600">+{view.length}</div></Link></li>
+        <li><Link to='/dashboard/view'> 
+        <FaUsers className="mr-2 font-2xl"></FaUsers> <div className="badge badge-primary border-l-indigo-600">+{view.length}</div></Link></li>
    
         
         {/* <li><Link to='/login'>Login</Link></li> */}

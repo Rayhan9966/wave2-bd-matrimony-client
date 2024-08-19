@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import SocialLogin from '../../Component/SocialLogin';
 
 // import Cover from '../Shared folder/Cover/Cover';
 
@@ -226,6 +227,8 @@ const SignUp = () => {
                                 >
                                     Already have an account?
                                 </a>
+                                <SocialLogin></SocialLogin>
+                            
                             </div>
                         </div>
                     </form>

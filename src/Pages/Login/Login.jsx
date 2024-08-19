@@ -39,6 +39,7 @@ const Login = () => {
           timer: 1500
         });
         navigate(from, { replace: true });
+        // navigate('/');
       })
 
   }
