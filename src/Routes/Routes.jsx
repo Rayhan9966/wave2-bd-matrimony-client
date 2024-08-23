@@ -11,6 +11,7 @@ import SignUp from "../Pages/Login/SignUp";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import View from "../Layout/Dashboard/View";
+import ManageUsers from "../Layout/Dashboard/ManageUsers";
 
 
 
@@ -48,14 +49,20 @@ import View from "../Layout/Dashboard/View";
         }
       ]
     },
+
     {
-      path: 'dashboard',
+      path: "dashboard",
       element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
       children:[
         {
           path:'view',
           element:<View></View>
-        }
+        },
+        //admin routes
+        {
+          path:'users',
+          element:<ManageUsers></ManageUsers>
+        },
       ]
     }
    
