@@ -24,7 +24,7 @@ const PremiumMember = () => {
     <SectionTitle 
     heading="Premium Members">
         
-    </SectionTitle><br></br><br></br><nr></nr>
+    </SectionTitle><br></br><br></br>
 
 <div className='grid grid-cols-3 gap-4'>
     {
