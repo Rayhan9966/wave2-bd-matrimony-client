@@ -1,13 +1,14 @@
-import { FaAddressBook, FaAddressCard, FaEnvelope, FaHome,  FaMobileAlt, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
+import { FaAddressBook, FaAddressCard, FaEnvelope, FaHome, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
 import {   FaDatabase, FaUsers } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 import useView from "../../Hooks/useView";
+import useAdmin from "../../Hooks/useAdmin";
 
 
 const Dashboard = () => {
     const [view]=useView();
     //todo get isadmin friom database
-    const isAdmin= true;
+    const [isAdmin]= useAdmin();
 
     return (
         <div className='flex'>
