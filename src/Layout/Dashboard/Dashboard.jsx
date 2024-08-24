@@ -27,7 +27,7 @@ const Dashboard = () => {
 
 
                 <li><NavLink to='/'><FaAddressBook></FaAddressBook>Approved Contact Request</NavLink></li>
-                <li><NavLink to='/'><FaSignOutAlt></FaSignOutAlt>Logout</NavLink></li>
+                
             </>:
             <>
                  {/* <li>
@@ -48,6 +48,7 @@ const Dashboard = () => {
                 <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
                 <li><NavLink to='/'><FaAddressBook></FaAddressBook>About</NavLink></li>
                 <li><NavLink to='/'><FaEnvelope></FaEnvelope>Contact</NavLink></li>
+                <li><NavLink to='/'><FaSignOutAlt></FaSignOutAlt>Logout</NavLink></li>
                 
             </ul>
 
