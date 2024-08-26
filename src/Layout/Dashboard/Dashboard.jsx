@@ -22,7 +22,7 @@ const Dashboard = () => {
                 <li><NavLink to='/dashboard/users'><FaUsers></FaUsers> Manage Users</NavLink></li>
                 {/* <li><NavLink to='/dashboard/addbiodata'><FaDatabase></FaDatabase>Add BioData</NavLink></li> */}
                 {/* <li><NavLink to='/dashboard/addbiodata'><FaList></FaList>Add BioData</NavLink></li> */}
-                <li><NavLink to='/dashboard/addbiodata'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
+                <li><NavLink to='/dashboard/addbio'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
                 <li><NavLink to='/dashboard/premium'><FaAddressCard></FaAddressCard>Approved Premium</NavLink></li>
 
 

@@ -12,6 +12,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import View from "../Layout/Dashboard/View";
 import ManageUsers from "../Layout/Dashboard/ManageUsers";
+import AddBio from "../Layout/Dashboard/AddBio";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -54,6 +56,7 @@ import ManageUsers from "../Layout/Dashboard/ManageUsers";
       path: "dashboard",
       element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
       children:[
+        //normal user routes
         {
           path:'view',
           element:<View></View>
@@ -61,8 +64,12 @@ import ManageUsers from "../Layout/Dashboard/ManageUsers";
         //admin routes
         {
           path:'users',
-          element:<ManageUsers></ManageUsers>
+          element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
         },
+        {
+          path:'addbio',
+          element:<AdminRoute><AddBio></AddBio></AdminRoute>
+        }
       ]
     }
    
