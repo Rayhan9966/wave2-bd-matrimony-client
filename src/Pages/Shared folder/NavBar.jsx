@@ -20,6 +20,7 @@ const NavBar = () => {
         <li><Link to="/">Home</Link> </li>
         <li><Link to="/biodata">Biodata</Link></li>
         <li><Link to="/allbiodata">All Biodata</Link></li>
+        {/* <li><Link to="/dashboard/addbio">Add Biodata</Link></li> */}
         <li><a>About Us</a></li> 
         <li><Link to='/dashboard'>DashBoard</Link></li>
         <li><Link to='/dashboard/view'> 

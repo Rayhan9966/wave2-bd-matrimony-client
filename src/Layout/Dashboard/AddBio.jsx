@@ -42,8 +42,8 @@ const AddBio = () => {
 
             }
             const bioRes = await axiosSecure.post('/biodata', bioData);
-            console.log(bioRes.data);
-            if (bioData.data.insertedId) {
+            console.log(bioRes.data)
+            if (bioRes.data.insertedId) {
                 reset();
                 //show pop up
                 Swal.fire({

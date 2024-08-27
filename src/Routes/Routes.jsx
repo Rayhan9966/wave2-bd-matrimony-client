@@ -68,6 +68,7 @@ import AdminRoute from "./AdminRoute";
         },
         {
           path:'addbio',
+          
           element:<AdminRoute><AddBio></AddBio></AdminRoute>
         }
       ]
