@@ -14,6 +14,7 @@ import View from "../Layout/Dashboard/View";
 import ManageUsers from "../Layout/Dashboard/ManageUsers";
 import AddBio from "../Layout/Dashboard/AddBio";
 import AdminRoute from "./AdminRoute";
+import EditBioData from "../Layout/Dashboard/EditBioData";
 
 
 
@@ -70,6 +71,11 @@ import AdminRoute from "./AdminRoute";
           path:'addbio',
           
           element:<AdminRoute><AddBio></AddBio></AdminRoute>
+        },
+        {
+          path:'editbiodata',
+          
+          element:<AdminRoute><EditBioData></EditBioData></AdminRoute>
         }
       ]
     }

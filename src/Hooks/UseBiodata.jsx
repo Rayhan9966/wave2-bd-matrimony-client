@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 const UseBiodata =()=>{
 
-    const [premium, setPremium]=useState([]);
+    // const [premium, setPremium]=useState([]);
+    const [biodata, setBiodata]=useState([]);
     const [loading, setLoading]=useState(true);
 
 useEffect ( () =>{
@@ -11,13 +12,15 @@ useEffect ( () =>{
    .then(res=> res.json())
    .then(data=>
    {
-    setPremium(data);
+    // setPremium(data);
+    setBiodata(data);
     setLoading(false);
     // const premiumBio=data.filter(bio=>bio.category ==='Premium');
     // setPremium(premiumBio)
 } )
 },[])
-return [premium,loading]
+return [biodata,loading]
+// return [premium,loading]
 
 
 }
