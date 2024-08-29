@@ -16,6 +16,7 @@ import AddBio from "../Layout/Dashboard/AddBio";
 import AdminRoute from "./AdminRoute";
 import EditBioData from "../Layout/Dashboard/EditBioData";
 import UpdateBioData from "../Layout/Dashboard/UpdateBioData";
+import Payment from "../Layout/Dashboard/Payment/Payment";
 
 
 
@@ -62,6 +63,11 @@ import UpdateBioData from "../Layout/Dashboard/UpdateBioData";
         {
           path:'view',
           element:<View></View>
+        },
+        {
+          path:'payment',
+          
+          element:<Payment></Payment>
         },
         //admin routes
         {
