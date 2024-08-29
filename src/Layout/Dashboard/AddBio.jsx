@@ -31,14 +31,20 @@ const AddBio = () => {
             // ?now send data server 
             const bioData = {
                 name: data.name,
-                email: data.name,
+                mother_name:data.mother_name,
+                // height:data.height,
+                height: parseFloat(data.height),
+                weight: parseFloat(data.weight),
+                // weight:data.weight,
+                email: data.email,
                 profile_image: data.profile_image,
                 occupation: data.occupation,
                 permanent_division: data.permanent_division,
                 biodata_type: data.biodata_type,
                 age: data.age,
+                dob:data.dob,
+                mobile: data.mobile,
                 image: res.data.data.display_url
-
 
             }
             const bioRes = await axiosSecure.post('/biodata', bioData);
@@ -97,7 +103,7 @@ const AddBio = () => {
                             <input
                                 type="text"
                                 placeholder="Description"
-                                {...register('price', { required: false })}
+                                {...register('description', { required: false })}
                                 className="input input-bordered w-full" />
                         </div>
                     </div>
@@ -110,7 +116,7 @@ const AddBio = () => {
                             <input
                                 type="text"
                                 placeholder="Religion"
-                                {...register('price', { required: false })}
+                                {...register('religion', { required: false })}
                                 className="input input-bordered w-full" />
                         </div>
                         {/* //ocupation */}
@@ -121,7 +127,7 @@ const AddBio = () => {
                             <input
                                 type="text"
                                 placeholder="Occupation"
-                                {...register('price', { required: true })}
+                                {...register('occupation', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
                     </div>
@@ -135,8 +141,8 @@ const AddBio = () => {
                             </label>
                             <input
                                 type="text"
-                                placeholder="Occupation"
-                                {...register('price', { required: true })}
+                                placeholder="Father Name"
+                                {...register('father_name', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
                         {/* //ocupation */}
@@ -146,8 +152,8 @@ const AddBio = () => {
                             </label>
                             <input
                                 type="text"
-                                placeholder="Occupation"
-                                {...register('price', { required: true })}
+                                placeholder="Mother Name"
+                                {...register('mother_name', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
                     </div>
@@ -161,8 +167,8 @@ const AddBio = () => {
                             <input
                                 type="text"
 
-                                placeholder="Occupation"
-                                {...register('price', { required: true })}
+                                placeholder="Height in feet"
+                                {...register('height', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
                         {/* //ocupation */}
@@ -172,8 +178,8 @@ const AddBio = () => {
                             </label>
                             <input
                                 type="number"
-                                placeholder="Occupation"
-                                {...register('price', { required: true })}
+                                placeholder="Weight in kg"
+                                {...register('weight', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
                     </div>
@@ -187,7 +193,7 @@ const AddBio = () => {
                             <input
                                 type="text"
                                 placeholder="Date Of Birth"
-                                {...register('price', { required: true })}
+                                {...register('dob', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
                         {/* //ocupation */}
@@ -218,7 +224,7 @@ const AddBio = () => {
                             <input
                                 type="email"
                                 placeholder="example@gmail.com"
-                                {...register('price', { required: true })}
+                                {...register('email', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
                         {/* //ocupation */}

@@ -27,7 +27,7 @@ axiosSecure.interceptors.response.use(function(response) {
     const status = error.response.status;
     // console.log(' status error in the interceptor' , status);
     //401 403  logoiut the user and move to login page
-    if(status ===401 || status ){
+    if(status === 401 || status ){
         await logOut();
 navigate('/login');
     }

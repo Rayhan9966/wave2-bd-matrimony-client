@@ -1,25 +1,37 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+// import { useEffect, useState } from "react";
+import useAxiosPublic from "./useAxiosPublic";
 
 const UseBiodata =()=>{
+    const axiosPublic = useAxiosPublic();
 
     // const [premium, setPremium]=useState([]);
-    const [biodata, setBiodata]=useState([]);
-    const [loading, setLoading]=useState(true);
+//     const [biodata, setBiodata]=useState([]);
+//     const [loading, setLoading]=useState(true);
 
-useEffect ( () =>{
+// useEffect ( () =>{
   
-   fetch('http://localhost:5000/biodata')
-   .then(res=> res.json())
-   .then(data=>
-   {
-    // setPremium(data);
-    setBiodata(data);
-    setLoading(false);
-    // const premiumBio=data.filter(bio=>bio.category ==='Premium');
-    // setPremium(premiumBio)
-} )
-},[])
-return [biodata,loading]
+//    fetch('http://localhost:5000/biodata')
+//    .then(res=> res.json())
+//    .then(data=>
+//    {
+//     // setPremium(data);
+//     setBiodata(data);
+//     setLoading(false);
+//     // const premiumBio=data.filter(bio=>bio.category ==='Premium');
+//     // setPremium(premiumBio)
+// } )
+// },[])
+
+const {data : biodata = [], isPending: loading, refetch} = useQuery({
+    queryKey:['biodata'],
+    queryFn : async()=>{
+        const res =await axiosPublic.get('/biodata');
+        return res.data;
+
+    }
+})
+return [biodata,loading,refetch]
 // return [premium,loading]
 
 

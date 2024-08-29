@@ -15,6 +15,7 @@ import ManageUsers from "../Layout/Dashboard/ManageUsers";
 import AddBio from "../Layout/Dashboard/AddBio";
 import AdminRoute from "./AdminRoute";
 import EditBioData from "../Layout/Dashboard/EditBioData";
+import UpdateBioData from "../Layout/Dashboard/UpdateBioData";
 
 
 
@@ -71,6 +72,12 @@ import EditBioData from "../Layout/Dashboard/EditBioData";
           path:'addbio',
           
           element:<AdminRoute><AddBio></AddBio></AdminRoute>
+        },
+        {
+          path:'updatebiodata/:id',
+          
+          element:<AdminRoute><UpdateBioData></UpdateBioData></AdminRoute>,
+          loader: ({params})=> fetch(`http://localhost:5000/biodata/${params.id}`)
         },
         {
           path:'editbiodata',
