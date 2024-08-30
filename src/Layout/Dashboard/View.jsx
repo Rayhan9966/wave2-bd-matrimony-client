@@ -6,9 +6,14 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { Link } from 'react-router-dom';
 
 const View = () => {
-    const axiosSecure = useAxiosSecure();
-
+    
     const [view, refetch] = useView();
+    const totalPrice =view.reduce((total, viewmember)=> total + viewmember.price, 0);
+    console.log(totalPrice);
+    const axiosSecure = useAxiosSecure();
+   
+
+
     const handleDelete = id => {
         Swal.fire({
             title: "Are you sure?",
@@ -40,6 +45,7 @@ const View = () => {
         <div>
             <div className='flex justify-between text-2xl mb-8 font-bold p-4'>
                 <h2 className='' >Total Members:{view.length}</h2>
+                <h2 className='' >Total Amount:{totalPrice}</h2>
                 {/* <button className='btn btn-outline'>Payment</button> */}
             </div>
 
@@ -55,8 +61,10 @@ const View = () => {
                             <th>Gender</th>
                             <th>Occupation</th>
                             <th>Division</th>
-                            <th>Action</th>
+                            
+                            <th>Pay Amount</th>
                             <th>Payment</th>
+                            <th>Action</th>
 
                         </tr>
                     </thead>
@@ -87,10 +95,14 @@ const View = () => {
                                 <td>
                                     {viewmember.permanent_division}
                                 </td>
+                                <td>
+                                    {viewmember.price}
+                                </td>
+                              
+                                <Link to='/dashboard/payment'><button className='btn btn-outline mt-5'>Payment</button></Link>
                                 <th>
                                     <button onClick={() => { handleDelete(viewmember._id) }} className="btn btn-ghost btn-xs"><FaTrashAlt className=' font-bold text-2xl text-red-500'></FaTrashAlt></button>
                                 </th>
-                                <Link to='/dashboard/payment'><button className='btn btn-outline mt-5'>Payment</button></Link>
                             </tr>)
                         }
                         {/* row 1 disabaled={!view.length>0}
