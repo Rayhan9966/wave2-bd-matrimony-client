@@ -7,7 +7,8 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { Link } from 'react-router-dom';
 
 const EditBioData = () => {
-    const [biodata,refetch] = UseBiodata();
+    const [biodata1,refetch] = UseBiodata();
+    // const [biodata,refetch] = UseBiodata();
     const axiosSecure = useAxiosSecure();
 
     const handleDeleteBdata = (bdata) => {
@@ -21,7 +22,8 @@ const EditBioData = () => {
             confirmButtonText: "Yes, delete it!"
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const res = await axiosSecure.delete(`/biodata/${bdata._id}`);
+                const res = await axiosSecure.delete(`/biodata1/${bdata._id}`);
+                // const res = await axiosSecure.delete(`/biodata/${bdata._id}`);
                 console.log(res.data);
                 if (res.data.deletedCount > 0) {
 //refetch
@@ -50,7 +52,7 @@ refetch();
                         <h2
                             className="text-3xl justify-start font-bold">Total Bio Data</h2>
 
-                        <span className="px-3 py-1 text-3xl text-violet-600 bg-blue-100 rounded-full font-bold dark:bg-white-800 dark:text-violet-600">{biodata.length}</span>
+                        <span className="px-3 py-1 text-3xl text-violet-600 bg-blue-100 rounded-full font-bold dark:bg-white-800 dark:text-violet-600">{biodata1.length}</span>
                     </div>
                     <div className='flex justify-start my-4 '>
                         {/* <h2 className='text-3xl font-bold'>All users</h2> */}
@@ -77,7 +79,8 @@ refetch();
                             </thead>
                             <tbody>
                                 {
-                                    biodata.map((bdata, index) => <tr key={bdata._id}>
+                                    // biodata.map((bdata, index) => <tr key={bdata._id}>
+                                    biodata1.map((bdata, index) => <tr key={bdata._id}>
                                         <th>
                                             {index + 1}
                                         </th>

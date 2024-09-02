@@ -30,7 +30,7 @@ const totalPrice =view.reduce((total, viewmember)=> total+ viewmember.price,0)
 
 
 
-    const handleSubmit=async (event)=>{
+    const handleSubmit= async (event)=>{
        event.preventDefault();
         
         if (!stripe || !elements) {
@@ -77,6 +77,21 @@ const totalPrice =view.reduce((total, viewmember)=> total+ viewmember.price,0)
           if (paymentIntent.status === 'succeeded') {
             console.log('Transaction id', paymentIntent.id);
             setTransactionId(paymentIntent.id);
+
+//now save the payment in to data base
+const payment={
+  email:user.email,
+  price:totalPrice,
+  transactionId: paymentIntent.id,
+  date:new Date(),
+  viewIds:view.map(viewmember=>viewmember._id),
+  viewMemberIds:view.map(viewmember=>viewmember.viewId) ,
+  status:'pending' //utc data convert .use moment js to
+
+}
+const res=await axiosSecure.post('/payment',payment);
+console.log('payment savedn' , res.data);
+
         }
 
       }

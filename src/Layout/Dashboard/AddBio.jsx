@@ -42,12 +42,16 @@ const AddBio = () => {
                 permanent_division: data.permanent_division,
                 biodata_type: data.biodata_type,
                 age: data.age,
+                price: parseFloat(data.price),
+                category: data.category,
                 dob:data.dob,
                 mobile: data.mobile,
                 image: res.data.data.display_url
 
             }
-            const bioRes = await axiosSecure.post('/biodata', bioData);
+            console.log('this is biodata',bioData);
+            const bioRes = await axiosSecure.post('/biodata1', bioData);
+            // const bioRes = await axiosSecure.post('/biodata', bioData);
             console.log(bioRes.data)
             if (bioRes.data.insertedId) {
                 reset();
@@ -182,6 +186,17 @@ const AddBio = () => {
                                 {...register('weight', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
+                        <div className="form-control w-full mx-6">
+                            <label className="label">
+                                <span className="label-text">Age*</span>
+                            </label>
+                            <input
+                                type="number"
+                                placeholder="Age"
+                                {...register('age', { required: true })}
+                                className="input input-bordered w-full" />
+                        </div>
+                        
                     </div>
 
                     {/* option */}
@@ -240,6 +255,36 @@ const AddBio = () => {
                         </div>
                         {/* option */}
 
+                    </div>
+                    {/* option */}
+                    <div className="flex gap-2">
+                    <div className="form-control w-full  mx-6 ">
+                            <label className="label">
+                                <span className="label-text">Register Fee*</span>
+                            </label>
+                            <select defaultValue="default" {...register('price', { required: true })}
+                                className="select select-bordered w-full">
+                                <option disabled value="default">Register Fee</option>
+                                <option   value="100">100 </option>
+                                <option  value="50">50 </option>
+
+                            </select>
+                        </div>
+                        {/* //category */}
+                        <div className="form-control w-full  mx-6 ">
+                            <label className="label">
+                                <span className="label-text">Division*</span>
+                            </label>
+                            <select defaultValue="default" {...register('category', { required: true })}
+                                className="select select-bordered w-full">
+                                <option disabled value="default">Category</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Premium">Premium</option>
+                               
+
+                            </select>
+                        </div>
                     </div>
                     {/* photo url */}
                     <div>

@@ -48,7 +48,8 @@ const UpdateBioData = () => {
 
 
             }
-            const bioRes = await axiosSecure.patch(`/biodata/${_id}`, bioData);
+            const bioRes = await axiosSecure.patch(`/biodata1/${_id}`, bioData);
+            // const bioRes = await axiosSecure.patch(`/biodata/${_id}`, bioData);
             console.log(bioRes.data)
             if (bioRes.data.modifiedCount >0) {
                 // reset();

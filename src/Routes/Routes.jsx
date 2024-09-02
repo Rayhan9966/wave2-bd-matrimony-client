@@ -83,7 +83,8 @@ import Payment from "../Layout/Dashboard/Payment/Payment";
           path:'updatebiodata/:id',
           
           element:<AdminRoute><UpdateBioData></UpdateBioData></AdminRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/biodata/${params.id}`)
+          loader: ({params})=> fetch(`http://localhost:5000/biodata1/${params.id}`)
+          // loader: ({params})=> fetch(`http://localhost:5000/biodata/${params.id}`)
         },
         {
           path:'editbiodata',

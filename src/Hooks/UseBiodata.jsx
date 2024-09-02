@@ -23,15 +23,20 @@ const UseBiodata =()=>{
 // } )
 // },[])
 
-const {data : biodata = [], isPending: loading, refetch} = useQuery({
-    queryKey:['biodata'],
+// const {data : biodata = [], isPending: loading, refetch} = useQuery({
+const {data : biodata1 = [], isPending: loading, refetch} = useQuery({
+    queryKey:['biodata1'],
+    // queryKey:['biodata'],
     queryFn : async()=>{
-        const res =await axiosPublic.get('/biodata');
+        const res =await axiosPublic.get('/biodata1');
+        console.log(res,'this is use biodata hook');
+        // const res =await axiosPublic.get('/biodata');
         return res.data;
 
     }
 })
-return [biodata,loading,refetch]
+return [biodata1,loading,refetch]
+// return [biodata,loading,refetch]
 // return [premium,loading]
 
 

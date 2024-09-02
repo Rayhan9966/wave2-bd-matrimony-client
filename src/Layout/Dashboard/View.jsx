@@ -9,7 +9,9 @@ const View = () => {
     
     const [view, refetch] = useView();
     const totalPrice =view.reduce((total, viewmember)=> total + viewmember.price, 0);
-    console.log(totalPrice);
+    // console.log(totalPrice);
+    console.log(view,'this is view data');
+    console.log(totalPrice,'this is view data');
     const axiosSecure = useAxiosSecure();
    
 
