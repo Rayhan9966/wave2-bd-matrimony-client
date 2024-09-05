@@ -11,7 +11,7 @@ const UseBiodata =()=>{
 
 // useEffect ( () =>{
   
-//    fetch('http://localhost:5000/biodata')
+//    fetch('https://matrimony-bd-server.vercel.app/biodata')
 //    .then(res=> res.json())
 //    .then(data=>
 //    {

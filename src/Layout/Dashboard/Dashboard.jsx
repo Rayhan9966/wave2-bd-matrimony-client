@@ -1,6 +1,6 @@
 import { FaAddressBook, FaAddressCard, FaEdit, FaEnvelope, FaHistory, FaHome, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
 import {   FaDatabase, FaUsers } from "react-icons/fa6";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useView from "../../Hooks/useView";
 import useAdmin from "../../Hooks/useAdmin";
 
@@ -18,8 +18,16 @@ const Dashboard = () => {
             isAdmin ?<>
                 
                     {/*  <li><NavLink to='/dashboard/adminedit'> <FaUsers></FaUsers> Admin Edit Bio Data</NavLink></li> */}
-                <li><NavLink to='/dashboard/admindashboard'><FaUserAlt></FaUserAlt> Admin Dashboard</NavLink></li>
+                <li><NavLink to='/dashboard/adminhome'><FaUserAlt></FaUserAlt> Admin Home</NavLink></li>
                 <li><NavLink to='/dashboard/users'><FaUsers></FaUsers> Manage Users</NavLink></li>
+                <li>
+        <Link to='/dashboard/view'>
+
+          <FaUsers className="mr-2 font-2xl"></FaUsers>
+          User Favourite
+          <div className="badge badge-primary border-l-indigo-600">+{view.length}</div>
+        </Link>
+      </li>
                 {/* <li><NavLink to='/dashboard/addbiodata'><FaDatabase></FaDatabase>Add BioData</NavLink></li> */}
                 {/* <li><NavLink to='/dashboard/addbiodata'><FaList></FaList>Add BioData</NavLink></li> */}
                 {/* <li><NavLink to='/dashboard/addbio'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
@@ -46,7 +54,7 @@ const Dashboard = () => {
                 <div className="divider"></div>
 
 
-                <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
+                <li><NavLink to='/dashboard/userhome'><FaHome></FaHome>UserHome</NavLink></li>
                 <li><NavLink to='/dashboard/addbio'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
                 <li><NavLink to='/dashboard/editbiodata'><FaEdit></FaEdit>Edit BioData</NavLink></li>
                 <li><NavLink to='/dashboard/payhistory'><FaHistory></FaHistory>Payment History</NavLink></li>

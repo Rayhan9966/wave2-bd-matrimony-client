@@ -18,6 +18,8 @@ import EditBioData from "../Layout/Dashboard/EditBioData";
 import UpdateBioData from "../Layout/Dashboard/UpdateBioData";
 import Payment from "../Layout/Dashboard/Payment/Payment";
 import PaymentHistory from "../Layout/Dashboard/Payment/PaymentHistory";
+import UserHome from "../Layout/Dashboard/AdminHome/UserHome";
+import AdminHome from "../Layout/Dashboard/AdminHome/AdminHome";
 
 
 
@@ -63,8 +65,12 @@ import PaymentHistory from "../Layout/Dashboard/Payment/PaymentHistory";
       children:[
         //normal user routes
         {
+          path:'userhome',
+          element:<UserHome></UserHome>
+        },
+        {
           path:'view',
-          element:<View></View>
+          element:<PrivateRoutes><View></View></PrivateRoutes>
         },
         {
           path:'payment',
@@ -76,6 +82,11 @@ import PaymentHistory from "../Layout/Dashboard/Payment/PaymentHistory";
           element:<PaymentHistory></PaymentHistory>
       },
         //admin routes
+        {
+          path:'adminhome',
+          
+          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+        },
         {
           path:'users',
           element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
@@ -90,8 +101,8 @@ import PaymentHistory from "../Layout/Dashboard/Payment/PaymentHistory";
           path:'updatebiodata/:id',
           
           element:<AdminRoute><UpdateBioData></UpdateBioData></AdminRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/biodata1/${params.id}`)
-          // loader: ({params})=> fetch(`http://localhost:5000/biodata/${params.id}`)
+          loader: ({params})=> fetch(`https://matrimony-bd-server.vercel.app/biodata1/${params.id}`)
+          // loader: ({params})=> fetch(`https://matrimony-bd-server.vercel.app/biodata/${params.id}`)
         },
         {
           path:'editbiodata',

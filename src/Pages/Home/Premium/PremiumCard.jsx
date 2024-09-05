@@ -25,7 +25,7 @@ console.log(bio,price,'this is premium part');
 			// name,profile_image,occupation,permanent_division,age,biodata_type,price
 			name,image,occupation,permanent_division,age,biodata_type,price
 		}
-		// axios.post('http://localhost:5000/views',memberItem)
+		// axios.post('https://matrimony-bd-server.vercel.app/views',memberItem)
 		axiosSecure.post('/views',memberItem)
 		.then(res=>{
 			console.log(res.data);

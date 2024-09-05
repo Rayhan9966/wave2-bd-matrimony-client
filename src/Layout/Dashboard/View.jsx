@@ -63,6 +63,7 @@ const View = () => {
                             <th>Gender</th>
                             <th>Occupation</th>
                             <th>Division</th>
+                            <th>Email</th>
                             
                             <th>Pay Amount</th>
                             <th>Payment</th>
@@ -96,6 +97,9 @@ const View = () => {
 
                                 <td>
                                     {viewmember.permanent_division}
+                                </td>
+                                <td>
+                                    {viewmember.email}
                                 </td>
                                 <td>
                                     {viewmember.price}
