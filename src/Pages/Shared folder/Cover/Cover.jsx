@@ -15,8 +15,9 @@ const Cover = ({img,title}) => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold uppeercase">{title}</h1>
             <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-              quasi. In deleniti eaque aut repudiandae et a id nisi.
+            A dedicated professional with excellent communication skills,
+             committed to personal growth and team collaboration.
+              Enthusiastic, adaptable, and goal-oriented with a passion for continuous learning and development.
             </p>
             {/* <button className="btn btn-primary">Get Started</button> */}
           </div>

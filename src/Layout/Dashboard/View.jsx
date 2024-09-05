@@ -81,7 +81,7 @@ const View = () => {
                                         <div className="avatar">
                                             <div className="mask mask-squircle h-16 w-16">
                                                 <img
-                                                    src={viewmember.profile_image}
+                                                    src={viewmember.image}
                                                     alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>

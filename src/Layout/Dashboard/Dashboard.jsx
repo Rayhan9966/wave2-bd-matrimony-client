@@ -1,4 +1,4 @@
-import { FaAddressBook, FaAddressCard, FaEdit, FaEnvelope, FaHome, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
+import { FaAddressBook, FaAddressCard, FaEdit, FaEnvelope, FaHistory, FaHome, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
 import {   FaDatabase, FaUsers } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 import useView from "../../Hooks/useView";
@@ -22,8 +22,8 @@ const Dashboard = () => {
                 <li><NavLink to='/dashboard/users'><FaUsers></FaUsers> Manage Users</NavLink></li>
                 {/* <li><NavLink to='/dashboard/addbiodata'><FaDatabase></FaDatabase>Add BioData</NavLink></li> */}
                 {/* <li><NavLink to='/dashboard/addbiodata'><FaList></FaList>Add BioData</NavLink></li> */}
-                <li><NavLink to='/dashboard/addbio'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
-                <li><NavLink to='/dashboard/editbiodata'><FaEdit></FaEdit>Edit BioData</NavLink></li>
+                {/* <li><NavLink to='/dashboard/addbio'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
+                <li><NavLink to='/dashboard/editbiodata'><FaEdit></FaEdit>Edit BioData</NavLink></li> */}
                 <li><NavLink to='/dashboard/premium'><FaAddressCard></FaAddressCard>Approved Premium</NavLink></li>
 
 
@@ -47,7 +47,9 @@ const Dashboard = () => {
 
 
                 <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
-                <li><NavLink to='/'><FaAddressBook></FaAddressBook>About</NavLink></li>
+                <li><NavLink to='/dashboard/addbio'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
+                <li><NavLink to='/dashboard/editbiodata'><FaEdit></FaEdit>Edit BioData</NavLink></li>
+                <li><NavLink to='/dashboard/payhistory'><FaHistory></FaHistory>Payment History</NavLink></li>
                 <li><NavLink to='/'><FaEnvelope></FaEnvelope>Contact</NavLink></li>
                 <li><NavLink to='/'><FaSignOutAlt></FaSignOutAlt>Logout</NavLink></li>
                 

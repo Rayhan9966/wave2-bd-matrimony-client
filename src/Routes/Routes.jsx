@@ -17,6 +17,7 @@ import AdminRoute from "./AdminRoute";
 import EditBioData from "../Layout/Dashboard/EditBioData";
 import UpdateBioData from "../Layout/Dashboard/UpdateBioData";
 import Payment from "../Layout/Dashboard/Payment/Payment";
+import PaymentHistory from "../Layout/Dashboard/Payment/PaymentHistory";
 
 
 
@@ -29,6 +30,7 @@ import Payment from "../Layout/Dashboard/Payment/Payment";
             path:'/',
             element:<Home></Home>
         },
+      
         {
             path:'/biodata',
             element:<Biodata></Biodata>
@@ -69,6 +71,10 @@ import Payment from "../Layout/Dashboard/Payment/Payment";
           
           element:<Payment></Payment>
         },
+        {
+          path:'payhistory',
+          element:<PaymentHistory></PaymentHistory>
+      },
         //admin routes
         {
           path:'users',
@@ -77,7 +83,8 @@ import Payment from "../Layout/Dashboard/Payment/Payment";
         {
           path:'addbio',
           
-          element:<AdminRoute><AddBio></AddBio></AdminRoute>
+          // element:<AdminRoute><AddBio></AddBio></AdminRoute>
+          element:<AddBio></AddBio>
         },
         {
           path:'updatebiodata/:id',
@@ -89,7 +96,8 @@ import Payment from "../Layout/Dashboard/Payment/Payment";
         {
           path:'editbiodata',
           
-          element:<AdminRoute><EditBioData></EditBioData></AdminRoute>
+          element:<EditBioData></EditBioData>
+          // element:<AdminRoute><EditBioData></EditBioData></AdminRoute>
         }
       ]
     }

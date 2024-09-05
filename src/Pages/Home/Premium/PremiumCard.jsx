@@ -22,7 +22,8 @@ console.log(bio,price,'this is premium part');
 		const memberItem={
 			viewId:_id,
 			email:user.email,
-			name,profile_image,occupation,permanent_division,age,biodata_type,price
+			// name,profile_image,occupation,permanent_division,age,biodata_type,price
+			name,image,occupation,permanent_division,age,biodata_type,price
 		}
 		// axios.post('http://localhost:5000/views',memberItem)
 		axiosSecure.post('/views',memberItem)
