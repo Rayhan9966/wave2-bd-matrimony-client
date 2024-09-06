@@ -3,9 +3,13 @@ import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { FaSackDollar, FaUsersViewfinder } from "react-icons/fa6";
 import { FaDatabase, FaUsers } from "react-icons/fa";
-// import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 
-// const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+
+// import React, { PureComponent } from 'react';
+// import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
+// const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 
 const AdminHome = () => {
@@ -24,6 +28,44 @@ const AdminHome = () => {
         }
 
     });
+console.log(stats);
+console.log(typeof stats.revenue);
+
+const data = [
+  // {
+  //   name: 'Revenue',
+  //   uv: stats?.revenue,
+  //   pv: 2400,
+  //   amt: 2400,
+  // },
+
+  {
+    name: 'Biodata ',
+    uv: stats?.biodata,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'View',
+    uv: stats?.view,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'User',
+    uv: stats?.users,
+    pv: 4800,
+    amt: 2181,
+  }
+
+];
+//pi data chart
+// const data1 = [
+//   { name: 'Biodata', value: 5225 },
+//   { name: 'Users', value: 250},
+//   { name: 'View', value: 500},
+//   { name: 'Revenue', value:600 },
+// ];
 
     // const { data: chartData = [] } = useQuery({
     //     queryKey: ['admin-stats'],
@@ -36,19 +78,21 @@ const AdminHome = () => {
 
     //custom bar chart
 
+    const getPath = (x, y, width, height) => {
+      return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
+      ${x + width / 2}, ${y}
+      C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
+      Z`;
+    };
+    
+    const TriangleBar = (props) => {
+      const { fill, x, y, width, height } = props;
+    
+      return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
+    };
+    
+// pi chart 
 
-    // const getPath = (x, y, width, height) => {
-    //     return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
-    //     ${x + width / 2}, ${y}
-    //     C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
-    //     Z`;
-    //   };
-      
-    //   const TriangleBar = (props) => {
-    //     const { fill, x, y, width, height } = props;
-      
-    //     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
-    //   };
 
 
     return (
@@ -101,12 +145,12 @@ const AdminHome = () => {
 	</div>
 </section>
 
-{/* <div className="flex">
+<div className="flex">
 <div>
 <BarChart
       width={500}
       height={300}
-      data={chartData}
+      data={data}
       margin={{
         top: 20,
         right: 30,
@@ -115,17 +159,50 @@ const AdminHome = () => {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="biodata1" />
+      <XAxis dataKey="name" />
       <YAxis />
-      <Bar dataKey="biodata1" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-        {chartData.map((entry, index) => (
+      <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+        {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={colors[index % 6]} />
         ))}
       </Bar>
     </BarChart>
 </div>
-<div></div>
+{/* <div>
+<PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
+        <Pie
+          data={data1}
+          cx={120}
+          cy={200}
+          innerRadius={60}
+          outerRadius={80}
+          fill="#8884d8"
+          paddingAngle={5}
+          dataKey="value"
+        >
+          {data1.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Pie
+          data={data1}
+          cx={420}
+          cy={200}
+          startAngle={180}
+          endAngle={0}
+          innerRadius={60}
+          outerRadius={80}
+          fill="#8884d8"
+          paddingAngle={5}
+          dataKey="value"
+        >
+          {data1.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+      </PieChart>
 </div> */}
+</div>
     </div>
     );
 };
