@@ -82,6 +82,10 @@ import Contact from "../Pages/Home/Contact";
           path:'payhistory',
           element:<PaymentHistory></PaymentHistory>
       },
+    //   {
+    //     path:'contact',
+    //     element:<Contact></Contact>
+    // },
         //admin routes
         {
           path:'adminhome',

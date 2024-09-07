@@ -1,8 +1,9 @@
-import { FaAddressBook, FaAddressCard, FaEdit, FaEnvelope, FaHistory, FaHome, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
-import {   FaDatabase, FaUsers } from "react-icons/fa6";
+import { FaAddressBook, FaAddressCard, FaEdit, FaHistory, FaHome, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
+import {   FaBackward, FaDatabase, FaUsers } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useView from "../../Hooks/useView";
 import useAdmin from "../../Hooks/useAdmin";
+// import { PiFacebookLogoThin } from "react-icons/pi";
 
 
 const Dashboard = () => {
@@ -53,12 +54,12 @@ const Dashboard = () => {
 
                 <div className="divider"></div>
 
-
+                <li><NavLink to='/'><FaBackward></FaBackward>Go to Home</NavLink></li>
                 <li><NavLink to='/dashboard/userhome'><FaHome></FaHome>UserHome</NavLink></li>
                 <li><NavLink to='/dashboard/addbio'><FaDatabase></FaDatabase>Add BioData</NavLink></li>
                 <li><NavLink to='/dashboard/editbiodata'><FaEdit></FaEdit>Edit BioData</NavLink></li>
                 <li><NavLink to='/dashboard/payhistory'><FaHistory></FaHistory>Payment History</NavLink></li>
-                <li><NavLink to='/'><FaEnvelope></FaEnvelope>Contact</NavLink></li>
+                {/* <li><NavLink to='/dashboard/contact'><FaEnvelope></FaEnvelope>Contact</NavLink></li> */}
                 <li><NavLink to='/'><FaSignOutAlt></FaSignOutAlt>Logout</NavLink></li>
                 
             </ul>

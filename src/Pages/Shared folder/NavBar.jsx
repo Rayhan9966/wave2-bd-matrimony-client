@@ -34,7 +34,7 @@ const NavBar = () => {
       user && !isAdmin && <li><Link to='/dashboard/userhome'>DashBoard</Link></li>
 
     }
- <li><Link  to='/about'>About Us</Link></li>
+ {/* <li><Link  to='/about'>About Us</Link></li> */}
 {/* {   user && !isAdmin && 
       <li>
         <Link to='/dashboard/view'>
