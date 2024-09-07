@@ -20,6 +20,7 @@ import Payment from "../Layout/Dashboard/Payment/Payment";
 import PaymentHistory from "../Layout/Dashboard/Payment/PaymentHistory";
 import UserHome from "../Layout/Dashboard/AdminHome/UserHome";
 import AdminHome from "../Layout/Dashboard/AdminHome/AdminHome";
+import Contact from "../Pages/Home/Contact";
 
 
 
@@ -49,8 +50,8 @@ import AdminHome from "../Layout/Dashboard/AdminHome/AdminHome";
             element:<Login></Login>
         },
         {
-            path:'/signup',
-            element:<SignUp></SignUp>
+            path:'/contact',
+            element:<Contact></Contact>
         },
         {
             path:'/signup',

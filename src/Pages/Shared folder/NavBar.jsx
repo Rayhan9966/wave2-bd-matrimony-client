@@ -22,6 +22,7 @@ const NavBar = () => {
     <li><Link to="/">Home</Link> </li>
     <li><Link to="/biodata">Biodata</Link></li>
     <li><Link to="/allbiodata">All Biodata</Link></li>
+    <li><Link to="/contact">Contact</Link></li>
    
     {
       // user? 'true:'false'

@@ -7,7 +7,7 @@ const Main = () => {
     const location = useLocation();
     console.log(location);
     // const noHeaderFooter= location.pathname.includes('login')
-    const noHeaderFooter=['/login', '/signup'].includes(location.pathname);
+    const noHeaderFooter=['/login', '/signup','/contact'].includes(location.pathname);
 
 
     return (
