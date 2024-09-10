@@ -12,9 +12,9 @@ const ViewPage = () => {
         <div>
            {/* <div> <h1>{viewDetails.title}</h1></div> */}
 <div>
-<section className="bg-white bg-fixed dark:bg-white-900 mt-10">
+<section className="bg-white mt-2 bg-fixed dark:bg-white-900 mt-10">
   <div className="container px-6 py-10 mx-auto">
-    <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl mt-6 dark:text-black">
+    <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl mt-10 dark:text-black">
     {viewDetails.name}
     </h1>
     <div className="mt-8 lg:-mx-6 lg:flex lg:items-center">
