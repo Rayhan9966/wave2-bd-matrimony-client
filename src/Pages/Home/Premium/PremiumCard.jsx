@@ -1,7 +1,7 @@
 
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import useView from '../../../Hooks/useView';
@@ -78,9 +78,10 @@ navigate('/login',{state: {from:location}})
             <h5 className="text-2xl  font-semibold   tracking-wide">{occupation}</h5>
 			
 		</div>
-		<div className='flex gap-2'>
-		<button onClick={()=>handleAddtoView(bio)} type="button" className="flex items-center justify-center w-1/3 p-3 font-semibold tracking-wide rounded-md dark:bg-orange-600 dark:text-gray-50">View </button>
-		<button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">View Profile</button>
+		<div className='flex w-full gap-2'>
+		<button onClick={()=>handleAddtoView(bio)} type="button" className="flex items-center justify-center w-1/3 p-3 font-semibold tracking-wide rounded-md dark:bg-orange-600 dark:text-gray-50">Add To View </button>
+		<Link to={`/viewDetails/${_id}`}><button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">View Profile</button></Link>
+		{/* <button className="btn  btn-success join-item">View Details</button> */}
 		</div>
 	</div>
 </div>

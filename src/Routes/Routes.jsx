@@ -21,6 +21,7 @@ import PaymentHistory from "../Layout/Dashboard/Payment/PaymentHistory";
 import UserHome from "../Layout/Dashboard/AdminHome/UserHome";
 import AdminHome from "../Layout/Dashboard/AdminHome/AdminHome";
 import Contact from "../Pages/Home/Contact";
+import ViewPage from "../Pages/ViewPage";
 
 
 
@@ -53,6 +54,14 @@ import Contact from "../Pages/Home/Contact";
             path:'/contact',
             element:<Contact></Contact>
         },
+        {
+
+          path:'/viewDetails/:id',
+          element:<PrivateRoutes>
+              <ViewPage></ViewPage>
+          </PrivateRoutes>,
+            loader: ({params}) =>  fetch(`https://matrimony-bd-server.vercel.app/biodata1/${params.id}`)
+      },
         {
             path:'/signup',
             element:<SignUp></SignUp>
