@@ -118,7 +118,8 @@ const NavBar = () => {
             <img
               className="w-auto h-7 sm:h-8"
               style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
-              src="/src/assets/New folder/bgimg/img1.jpg"
+              src="https://i.postimg.cc/SxYR6MV9/img1.jpg"
+              // src="/src/assets/New folder/bgimg/img1.jpg"
               alt=""
             /></Link>
           <Link to='/' className="btn btn-ghost text-xl">BdMatrimony</Link>

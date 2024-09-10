@@ -6,10 +6,14 @@ import axios from 'axios';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import useView from '../../../Hooks/useView';
 
+
+
 const PremiumCard = ({bio}) => {
+	
 	const{_id, biodata_type,image,permanent_division, age,occupation,category,name,price}=bio;
 console.log(bio,price,'this is premium part');
 	const {user}=useAuth();
+	
 	const navigate=useNavigate();
 	const location = useLocation();
 	const axiosSecure=useAxiosSecure();
@@ -82,6 +86,8 @@ navigate('/login',{state: {from:location}})
 		<button onClick={()=>handleAddtoView(bio)} type="button" className="flex items-center justify-center w-1/3 p-3 font-semibold tracking-wide rounded-md dark:bg-orange-600 dark:text-gray-50">Add To View </button>
 		<Link to={`/viewDetails/${_id}`}><button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">View Profile</button></Link>
 		{/* <button className="btn  btn-success join-item">View Details</button> */}
+	
+
 		</div>
 	</div>
 </div>

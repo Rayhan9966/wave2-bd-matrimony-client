@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaHome } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     return (
@@ -6,6 +8,7 @@ const Contact = () => {
             <section class="bg-white dark:bg-violet-800">
     <div class="container px-6 py-12 mx-auto">
         <div class="text-center">
+        <Link to='/'> <button className='btn btn-outline mt-6 '>   <FaHome className='text-2xl'></FaHome>   </button></Link>
             <p class="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
 
             <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Get in touch</h1>

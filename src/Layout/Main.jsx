@@ -4,10 +4,11 @@ import NavBar from "../Pages/Shared folder/NavBar";
 
 
 const Main = () => {
+    
     const location = useLocation();
     console.log(location);
     // const noHeaderFooter= location.pathname.includes('login')
-    const noHeaderFooter=['/login', '/signup','/contact'].includes(location.pathname);
+    const noHeaderFooter=['/login', '/signup','/contact','/viewDetails/:id'].includes(location.pathname);
 
 
     return (
