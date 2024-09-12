@@ -20,7 +20,7 @@ const ViewPage = () => {
     <div className="mt-8 lg:-mx-6 lg:flex lg:items-center">
       <img
         className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
-        src={viewDetails.profile_image}
+        src={viewDetails.image}
         alt=""
       />
       <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
